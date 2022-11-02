@@ -58,14 +58,8 @@ nav {
         height: auto;
     }
 
-
-    .nav-menu {
-        padding-top: 1em;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        overflow-x: hidden;
-
+    .top {
+        overflow-y: auto;
         &::-webkit-scrollbar {
             background-color: transparent;
             width: 12px;
@@ -80,29 +74,38 @@ nav {
             }
         }
 
-        .btn {
-            color: white;
-            text-decoration: none;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+        .nav-menu {
+            padding-top: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
             overflow-x: hidden;
-            min-height: 1.94em;
 
-            padding: .35em .8em .35em 1em;
-            border-top-right-radius: 7px;
-            border-bottom-right-radius: 7px;
-            margin-right: 1em;
 
-            transition: background-color 0.2s, color 0.1s;
+            .btn {
+                color: white;
+                text-decoration: none;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow-x: hidden;
+                min-height: 1.94em;
 
-            &.active,
-            &:hover {
-                background-color: var(--yellow);
-                color: #252525;
-            }
+                padding: .35em .8em .35em 1em;
+                border-top-right-radius: 7px;
+                border-bottom-right-radius: 7px;
+                margin-right: 1em;
 
-            &.active {
-                font-weight: 500;
+                transition: background-color 0.2s, color 0.1s;
+
+                &.active,
+                &:hover {
+                    background-color: var(--yellow);
+                    color: #252525;
+                }
+
+                &.active {
+                    font-weight: 500;
+                }
             }
         }
     }
@@ -115,7 +118,7 @@ nav {
         justify-content: space-evenly;
         align-items: center;
 
-        margin-bottom: 1em;
+        margin: 1em 0;
     }
 }
 </style>
