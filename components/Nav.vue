@@ -1,0 +1,122 @@
+<script setup lang="ts">
+const menu = [
+    { name: "Aktualności", icon: "mdi:newspaper-variant-outline", path: "/" },
+    { name: "Szkoła", icon: "mdi:school-outline", path: "/szkola" },
+    { name: "Dokumenty", icon: "mdi:file-document-multiple-outline", path: "/dokumenty" },
+    { name: "Biblioteka", icon: "mdi:library-outline", path: "/biblioteka" },
+    { name: "Boisko", icon: "mdi:soccer", path: "/boisko" },
+    { name: "Matura 2023", icon: "mdi:file-document-outline", path: "/matura-2023" },
+    { name: "Projekty", icon: "mdi:lightbulb-multiple-outline", path: "/projekty" },
+    { name: "Kontakt", icon: "mdi:phone-in-talk-outline", path: "/kontakt" },
+    { name: "RODO", icon: "mdi:file-document-multiple-outline", path: "/rodo" },
+]
+const socials = [
+    { icon: "ic:baseline-tiktok", url: "https://tiktok.com/@zsnr_2" },
+    { icon: "mdi:instagram", url: "https://www.instagram.com/zs2_kosciuszki/" },
+    { icon: "mdi:youtube", url: "https://www.youtube.com/channel/UCiutxe0og69YOmRjYkRg_Fw" },
+]
+</script>
+<template>
+    <nav>
+        <div class="top">
+            <div class="nav-menu">
+                <NuxtLink v-for="item in menu" :key="item.name" :to="item.path" class="btn"
+                    :class="item.path == '/' + $route.path.split('/')[1] ? 'active' : null" :title="item.name">
+                    <Icon :name="item.icon" size="23" />&nbsp;&nbsp;{{ item.name }}
+                </NuxtLink>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="socials-menu">
+                <Button v-for="item in socials" :url="item.url" :target-blank="true">
+                    <Icon :name="item.icon" size="30" />
+                </Button>
+            </div>
+        </div>
+    </nav>
+</template>
+<style scoped lang="scss">
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: var(--nav-width);
+
+    font-size: 20px;
+    color: white;
+    background-color: var(--blue);
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .logo {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .nav-menu {
+        padding-top: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 12px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #0003;
+            border-radius: 50px;
+
+            &:hover {
+                background-color: #0005;
+            }
+        }
+
+        .btn {
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+            min-height: 1.94em;
+
+            padding: .35em .8em .35em 1em;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            margin-right: 1em;
+
+            transition: background-color 0.2s, color 0.1s;
+
+            &.active,
+            &:hover {
+                background-color: var(--yellow);
+                color: #252525;
+            }
+
+            &.active {
+                font-weight: 500;
+            }
+        }
+    }
+
+
+
+    .socials-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        margin-bottom: 1em;
+    }
+}
+</style>
+  
