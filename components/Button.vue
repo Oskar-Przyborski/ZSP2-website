@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Props {
     url: string,
-    targetBlank: boolean
+    targetBlank?: boolean
 }
 withDefaults(defineProps<Props>(), {
     targetBlank: false
@@ -16,12 +16,15 @@ withDefaults(defineProps<Props>(), {
 <style scoped lang="scss">
 .btn {
     border-radius: .5em;
-    padding: 7px;
-    transition: background-color 0.2s, color 0.1s;
-    color: white;
+    padding: .35em;
+    transition: background-color 0.2s, color 0.1s, border 0.2s;
+    color: inherit;
     text-decoration: none;
 
+    border: 2px solid currentColor;
+    
     &:hover {
+        border: 2px solid var(--yellow);
         background-color: var(--yellow);
         color: #252525;
     }
