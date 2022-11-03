@@ -19,6 +19,7 @@ defineProps<Props>()
 </template>
 <style lang="scss" scoped>
 .category-button {
+    font-size:0.9em;
     border: 1px solid rgba(0, 0, 0, 0.125);
     text-decoration: none;
 

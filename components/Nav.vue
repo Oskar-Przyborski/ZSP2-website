@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const menu = [
-    { name: "Aktualności", icon: "mdi:newspaper-variant-outline", path: "/" },
+    { name: "Home", icon: "mdi:home-outline", path: "/" },
+    { name: "Aktualności", icon: "mdi:newspaper-variant-outline", path: "/aktualnosci" },
     { name: "Szkoła", icon: "mdi:school-outline", path: "/szkola" },
     { name: "Dokumenty", icon: "mdi:file-document-multiple-outline", path: "/dokumenty" },
     { name: "Biblioteka", icon: "mdi:library-outline", path: "/biblioteka" },
