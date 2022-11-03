@@ -25,6 +25,7 @@ defineProps<Props>()
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     .text {
         padding: 1em;
@@ -42,32 +43,28 @@ defineProps<Props>()
     }
 
     .arrow {
-        height: 100%;
-        aspect-ratio: 1/1;
         position: relative;
         display: grid;
         place-items: center;
-
-        &::before {
-            position: absolute;
-            content: "";
-            top: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--yellow);
-            z-index: -1;
-            width: 0%;
-            transition: width 0.2s ease-in-out;
-        }
+        padding: 20px;
     }
 
-
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--yellow);
+        z-index: -1;
+        transition: clip-path 0.3s ease-out;
+        clip-path: circle(0% at right bottom);
+    }
 
     &:hover {
-        .arrow {
-            &::before {
-                width: 100%;
-            }
+        &::before {
+            clip-path: circle(150% at right bottom);
         }
     }
 }
