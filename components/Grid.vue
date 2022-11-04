@@ -16,7 +16,7 @@
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 677px) {
     .grid {
         grid-template-columns: 1fr;
     }

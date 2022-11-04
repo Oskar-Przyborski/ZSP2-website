@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <Nav />
+        <Nav class="nav"/>
         <div class="content">
             <slot />
             <Footer />
@@ -8,10 +8,22 @@
     </div>
 </template> 
 <style scoped lang="scss">
-.content {
-    width: calc(100% - var(--nav-width));
-    margin-left: var(--nav-width);
+.app {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: max-content 1fr;
 
-    padding: 2em;
+
+    .content {
+        padding: 2em;
+        overflow-y: auto;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .app {
+        display:block;
+    }
 }
 </style>

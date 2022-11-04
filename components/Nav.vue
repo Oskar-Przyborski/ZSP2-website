@@ -16,110 +16,152 @@ const socials = [
     { icon: "mdi:instagram", url: "https://www.instagram.com/zs2_kosciuszki/" },
     { icon: "mdi:youtube", url: "https://www.youtube.com/channel/UCiutxe0og69YOmRjYkRg_Fw" },
 ]
+const expanded = ref(false)
 </script>
 <template>
-    <nav>
-        <div class="top">
-            <div class="nav-menu">
-                <NuxtLink v-for="item in menu" :key="item.name" :to="item.path" class="btn"
-                    :class="item.path == '/' + $route.path.split('/')[1] ? 'active' : null" :title="item.name">
-                    <Icon :name="item.icon" size="23" />&nbsp;&nbsp;{{ item.name }}
-                </NuxtLink>
-            </div>
+    <nav :expanded="expanded">
+        <div class="nav-toggle">
+            <Icon :name="expanded ? 'mdi:close' : 'mdi:menu'" size="35" @click="expanded = !expanded" />
+            <div>ZS2 Wągrowiec</div>
         </div>
-        <div class="bottom">
-            <div class="socials-menu">
-                <Button v-for="item in socials" :url="item.url" :target-blank="true">
-                    <Icon :name="item.icon" size="30" />
-                </Button>
+        <div class="content">
+            <div class="top">
+                <div class="nav-menu">
+                    <NuxtLink v-for="item in menu" :key="item.name" :to="item.path" class="btn"
+                        @click="expanded = false"
+                        :class="item.path == '/' + $route.path.split('/')[1] ? 'active' : null" :title="item.name">
+                        <Icon :name="item.icon" size="23" />&nbsp;&nbsp;{{ item.name }}
+                    </NuxtLink>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="socials-menu">
+                    <Button v-for="item in socials" :url="item.url" :target-blank="true">
+                        <Icon :name="item.icon" size="30" />
+                    </Button>
+                </div>
             </div>
         </div>
     </nav>
 </template>
 <style scoped lang="scss">
 nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-
-    height: 100%;
-    width: var(--nav-width);
-
     font-size: 20px;
     color: white;
     background-color: var(--blue);
 
+    .content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .logo {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .top {
-        overflow-y: auto;
-        &::-webkit-scrollbar {
-            background-color: transparent;
-            width: 12px;
+        .logo {
+            max-width: 100%;
+            height: auto;
         }
 
-        &::-webkit-scrollbar-thumb {
-            background-color: #0003;
-            border-radius: 50px;
+        .top {
+            overflow-y: auto;
 
-            &:hover {
-                background-color: #0005;
+            &::-webkit-scrollbar {
+                background-color: transparent;
+                width: 12px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #0003;
+                border-radius: 50px;
+
+                &:hover {
+                    background-color: #0005;
+                }
+            }
+
+            .nav-menu {
+                padding-top: 1em;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                overflow-x: hidden;
+
+
+                .btn {
+                    color: white;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow-x: hidden;
+                    min-height: 1.94em;
+
+                    padding: .35em .8em .35em 1em;
+                    border-top-right-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                    margin-right: 1em;
+
+                    transition: background-color 0.2s, color 0.1s;
+
+                    &.active,
+                    &:hover {
+                        background-color: var(--yellow);
+                        color: #252525;
+                    }
+
+                    &.active {
+                        font-weight: 500;
+                    }
+                }
             }
         }
 
-        .nav-menu {
-            padding-top: 1em;
+        .socials-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+            margin: 1em 0;
+        }
+    }
+}
+
+.nav-toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-toggle {
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--blue);
+        padding: .35em 0.5em;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+
+        .content {
+            display: none;
+        }
+
+        &[expanded=true] {
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            overflow-x: hidden;
 
-
-            .btn {
-                color: white;
-                text-decoration: none;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow-x: hidden;
-                min-height: 1.94em;
-
-                padding: .35em .8em .35em 1em;
-                border-top-right-radius: 7px;
-                border-bottom-right-radius: 7px;
-                margin-right: 1em;
-
-                transition: background-color 0.2s, color 0.1s;
-
-                &.active,
-                &:hover {
-                    background-color: var(--yellow);
-                    color: #252525;
-                }
-
-                &.active {
-                    font-weight: 500;
-                }
+            .content {
+                display: flex;
+                height: 100%;
             }
         }
-    }
-
-
-
-    .socials-menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-
-        margin: 1em 0;
     }
 }
 </style>

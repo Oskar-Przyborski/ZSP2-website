@@ -13,7 +13,7 @@
 
     .btn{
         padding: .7em;
-        margin: 2em;
+        margin: 2em 0;
     }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>Szybki wybór</h1>
         <div>
             <h2>Dla ucznia</h2>
             <Grid>
