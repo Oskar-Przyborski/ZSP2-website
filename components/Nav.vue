@@ -49,6 +49,7 @@ nav {
     font-size: 20px;
     color: white;
     background-color: var(--blue);
+    z-index: 1;
 
     .content {
         display: flex;
@@ -120,7 +121,7 @@ nav {
             justify-content: space-evenly;
             align-items: center;
 
-            margin: 1em 0;
+            padding: 1em 0;
         }
     }
 }

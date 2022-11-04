@@ -15,7 +15,7 @@
 
 
     .content {
-        padding: 2em;
+        padding: .5em 2em;
         overflow-y: auto;
     }
 
