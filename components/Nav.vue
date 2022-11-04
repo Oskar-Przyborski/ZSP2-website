@@ -48,14 +48,16 @@ const expanded = ref(false)
 nav {
     font-size: 20px;
     color: white;
-    background-color: var(--blue);
     z-index: 1;
 
     .content {
+        background-color: var(--blue);
+        
         display: flex;
         height: 100%;
         flex-direction: column;
         justify-content: space-between;
+
 
         .logo {
             max-width: 100%;
@@ -127,6 +129,7 @@ nav {
 }
 
 .nav-toggle {
+    user-select: none;
     display: none;
 }
 
@@ -141,26 +144,29 @@ nav {
     }
 
     nav {
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        transition: height 0.2s;
 
         .content {
-            display: none;
+            display: flex;
+            width: 100%;
+            // transition: width 0.2s ease-out;
+            overflow: hidden;
         }
 
         &[expanded=true] {
             z-index: 10;
-            position: fixed;
-            top: 0;
-            left: 0;
             height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
 
             .content {
-                display: flex;
-                height: 100%;
+                width: 100%;
             }
         }
     }

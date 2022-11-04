@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <Nav class="nav"/>
+        <Nav class="nav" />
         <div class="content">
             <slot />
             <Footer />
@@ -16,14 +16,18 @@
 
     .content {
         padding: .5em 2em;
-        overflow-y: auto;
     }
 
 }
 
 @media only screen and (max-width: 767px) {
     .app {
-        display:block;
+        display: block;
+
+        .content {
+            padding: 0em .7em 0em .7em; 
+            padding-top: 49px;
+        }
     }
 }
 </style>

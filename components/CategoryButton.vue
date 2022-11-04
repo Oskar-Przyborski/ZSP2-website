@@ -60,12 +60,12 @@ defineProps<Props>()
         background-color: var(--yellow);
         z-index: -1;
         transition: clip-path 0.3s ease-out;
-        clip-path: circle(0% at right bottom);
+        clip-path: circle(0% at top left);
     }
 
     &:hover {
         &::before {
-            clip-path: circle(150% at right bottom);
+            clip-path: circle(150% at top left);
         }
     }
 }
