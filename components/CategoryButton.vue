@@ -3,11 +3,14 @@ interface Props {
     title: string,
     description: string,
     path?: string
+    targetBlank?: boolean
 }
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+    targetBlank: false
+})
 </script>
 <template>
-    <NuxtLink :to="path" class="category-button">
+    <NuxtLink :to="path" :target="targetBlank ? '_blank' : '_self'" class="category-button">
         <div class="text">
             <div class="title">{{ title }}</div>
             <div class="description">{{ description }}</div>
@@ -19,7 +22,7 @@ defineProps<Props>()
 </template>
 <style lang="scss" scoped>
 .category-button {
-    font-size:0.9em;
+    font-size: 0.9em;
     border: 1px solid rgba(0, 0, 0, 0.125);
     text-decoration: none;
 

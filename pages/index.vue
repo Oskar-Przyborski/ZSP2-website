@@ -1,22 +1,23 @@
 <template>
-    <div>
-        <h1>Szybki wybór</h1>
-        <div>
-            <h2>Dla ucznia</h2>
+    <main>
+        <SchoolBanner />
+        <section class="section">
+            <h1>Szybki wybór</h1>
             <Grid>
-                <CategoryButton title="Kalendarz roku szkolnego" description="Sprawdź kiedy najbliższe wolne" path="/" />
+                <CategoryButton title="E-dziennik" description="Link do szkolnego dziennika"
+                    path="https://uonetplus.vulcan.net.pl/powiatwagrowiecki/" :targetBlank="true" />
+                <CategoryButton title="Kalendarz roku szkolnego" description="Sprawdź kiedy najbliższe wolne"
+                    path="/" />
                 <CategoryButton title="Matura 2023" description="To czego się obawiasz najbardziej" path="/" />
+                <CategoryButton title="Biblioteka" description="Dla książkowych moli" path="/" />
                 <CategoryButton title="Konkursy" description="Spróbuj swoich sił!" path="/" />
-                <CategoryButton title="PSO" description="Jeśli czujesz się oszukany :P" path="/" />
-            </Grid>
-        </div>
-        <div style="padding-top: 1.5em;">
-            <h2>Dla rodzica</h2>
-            <Grid>
                 <CategoryButton title="Komitet rodzicielski" description="Wpłata dla komitetu" path="/" />
-                <CategoryButton title="Kontakt" description="Informcje kontaktowe" path="/" />
-                <CategoryButton title="Projekty" description="Informacje o szkolnych projektach" path="/" />
             </Grid>
-        </div>
-    </div>
+        </section>
+    </main>
 </template>
+<style lang="scss" scoped>
+.section {
+    margin: 2em 0;
+}
+</style>
