@@ -17,18 +17,31 @@ const socials = [
     { icon: "mdi:youtube", url: "https://www.youtube.com/channel/UCiutxe0og69YOmRjYkRg_Fw" },
 ]
 const expanded = ref(false)
+const hidden = ref(true)
+
+const toggleExpanded = (val?: boolean) => {
+    expanded.value = typeof val !== 'undefined' ? val : !expanded.value
+    document.body.style.overflow = expanded.value ? 'hidden' : ''
+
+    if (expanded.value) {
+        hidden.value = false;
+    } else {
+        setTimeout(() => hidden.value = true, 200)
+    }
+}
+
 </script>
 <template>
     <nav :expanded="expanded">
         <div class="nav-toggle">
-            <Icon :name="expanded ? 'mdi:close' : 'mdi:menu'" size="35" @click="expanded = !expanded" />
+            <Icon :name="expanded ? 'mdi:close' : 'mdi:menu'" size="35" @click="() => toggleExpanded()" />
             <div>ZS2 Wągrowiec</div>
         </div>
-        <div class="content">
+        <div class="content" :hidden="hidden">
             <div class="top">
                 <div class="nav-menu">
                     <NuxtLink v-for="item in menu" :key="item.name" :to="item.path" class="btn"
-                        @click="expanded = false"
+                        @click="() => toggleExpanded(false)"
                         :class="item.path == '/' + $route.path.split('/')[1] ? 'active' : null" :title="item.name">
                         <Icon :name="item.icon" size="23" />&nbsp;&nbsp;{{ item.name }}
                     </NuxtLink>
@@ -42,6 +55,7 @@ const expanded = ref(false)
                 </div>
             </div>
         </div>
+        <div class="click-outside-handler" @click="() => toggleExpanded(false)"></div>
     </nav>
 </template>
 <style scoped lang="scss">
@@ -50,13 +64,18 @@ nav {
     color: white;
     z-index: 1;
 
+    .nav-toggle {
+        user-select: none;
+        display: none;
+    }
+
     .content {
         background-color: var(--blue);
-        
+
         display: flex;
-        height: 100%;
         flex-direction: column;
         justify-content: space-between;
+        height: 100%;
 
 
         .logo {
@@ -125,48 +144,67 @@ nav {
 
             padding: 1em 0;
         }
+
     }
+
 }
 
-.nav-toggle {
-    user-select: none;
-    display: none;
-}
 
 @media only screen and (max-width: 767px) {
-    .nav-toggle {
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: var(--blue);
-        padding: .35em 0.5em;
-    }
 
     nav {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 0%;
-        display: flex;
-        flex-direction: column;
+        right: 0;
         z-index: 10;
-        transition: height 0.2s;
+
+        .nav-toggle {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--blue);
+            padding: .35em 0.5em;
+        }
 
         .content {
-            display: flex;
-            width: 100%;
-            // transition: width 0.2s ease-out;
-            overflow: hidden;
+            z-index: 1;
+            transform: translateX(-100%);
+            transition: transform ease-out 0.2s;
+
+            position: fixed;
+            top: 49px;
+            bottom: 0px;
+            left: 0px;
+            height: initial;
+
+            &[hidden=true] {
+                display: none;
+            }
+        }
+
+        .click-outside-handler {
+            background-color: #0000;
+            transition: background-color 0.2s;
         }
 
         &[expanded=true] {
             z-index: 10;
-            height: 100%;
 
             .content {
-                width: 100%;
+                display: flex;
+                transform: translateX(0%);
+            }
+
+            .click-outside-handler {
+                background-color: #0003;
+                z-index: -1;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
             }
         }
     }
