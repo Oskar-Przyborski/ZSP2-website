@@ -1,7 +1,7 @@
 
 <template>
     <div class="footer">
-        Copyright © 2022 Zespół Szkół nr 2 w Wągrowcu.
+        Copyright © 2022 Zespół Szkół nr 2 w Wągrowcu. Developed by Oskar Przyborski.
     </div>
 </template>
 <style lang="scss" scoped>

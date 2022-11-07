@@ -60,9 +60,14 @@ const toggleExpanded = (val?: boolean) => {
 </template>
 <style scoped lang="scss">
 nav {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+
     font-size: 20px;
     color: white;
-    z-index: 1;
+    z-index: 10;
 
     .nav-toggle {
         user-select: none;
@@ -70,6 +75,7 @@ nav {
     }
 
     .content {
+        width: 250px;
         background-color: var(--blue);
 
         display: flex;
@@ -153,11 +159,8 @@ nav {
 @media only screen and (max-width: 767px) {
 
     nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 10;
+        width: 100%;
+        bottom: initial;
 
         .nav-toggle {
             color: white;

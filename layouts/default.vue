@@ -10,12 +10,10 @@
 <style scoped lang="scss">
 .app {
     height: 100vh;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-
 
     .content {
         padding: .5em 2em;
+        margin-left: 250px;
     }
 
 }
@@ -25,8 +23,9 @@
         display: block;
 
         .content {
-            padding: 0em .7em 0em .7em; 
+            padding: 0em .7em 0em .7em;
             padding-top: 49px;
+            margin-left: initial;
         }
     }
 }
