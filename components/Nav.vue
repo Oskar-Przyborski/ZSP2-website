@@ -156,7 +156,7 @@ nav {
 }
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 800px) {
 
     nav {
         width: 100%;
