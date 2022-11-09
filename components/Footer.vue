@@ -26,7 +26,7 @@
 </template>
 <style lang="scss" scoped>
 footer {
-    margin-top: 1em;
+    margin-top: 2em;
     text-align: center;
     font-size: 0.9em;
     color: #252525;
