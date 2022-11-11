@@ -1,21 +1,6 @@
 <script setup lang="ts">
-const menu = [
-    { name: "Home", icon: "mdi:home-outline", path: "/" },
-    { name: "Aktualności", icon: "mdi:newspaper-variant-outline", path: "/aktualnosci" },
-    { name: "Szkoła", icon: "mdi:school-outline", path: "/szkola" },
-    { name: "Dokumenty", icon: "mdi:file-document-multiple-outline", path: "/dokumenty" },
-    { name: "Biblioteka", icon: "mdi:library-outline", path: "/biblioteka" },
-    { name: "Boisko", icon: "mdi:soccer", path: "/boisko" },
-    { name: "Matura 2023", icon: "mdi:file-document-outline", path: "/matura-2023" },
-    { name: "Projekty", icon: "mdi:lightbulb-multiple-outline", path: "/projekty" },
-    { name: "Kontakt", icon: "mdi:phone-in-talk-outline", path: "/kontakt" },
-    { name: "RODO", icon: "mdi:file-document-multiple-outline", path: "/rodo" },
-]
-const socials = [
-    { icon: "ic:baseline-tiktok", url: "https://tiktok.com/@zsnr_2" },
-    { icon: "mdi:instagram", url: "https://www.instagram.com/zs2_kosciuszki/" },
-    { icon: "mdi:youtube", url: "https://www.youtube.com/channel/UCiutxe0og69YOmRjYkRg_Fw" },
-]
+const data = await getNavData()
+
 const expanded = ref(false)
 const hidden = ref(true)
 
@@ -40,16 +25,16 @@ const toggleExpanded = (val?: boolean) => {
         <div class="content" :hidden="hidden">
             <div class="top">
                 <div class="nav-menu">
-                    <NuxtLink v-for="item in menu" :key="item.name" :to="item.path" class="btn"
+                    <NuxtLink v-for="item in data.menu" :key="item.title" :to="item.path" class="btn"
                         @click="() => toggleExpanded(false)"
-                        :class="item.path == '/' + $route.path.split('/')[1] ? 'active' : null" :title="item.name">
-                        <Icon :name="item.icon" size="23" />&nbsp;&nbsp;{{ item.name }}
+                        :class="item.path == '/' + $route.path.split('/')[1] ? 'active' : null" :title="item.title">
+                        <Icon :name="item.icon" size="23" />&nbsp;&nbsp;{{ item.title }}
                     </NuxtLink>
                 </div>
             </div>
             <div class="bottom">
                 <div class="socials-menu">
-                    <Button v-for="item in socials" :url="item.url" :target-blank="true">
+                    <Button v-for="item in data.socials" :url="item.url" :target-blank="true">
                         <Icon :name="item.icon" size="30" />
                     </Button>
                 </div>
