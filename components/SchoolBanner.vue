@@ -52,7 +52,7 @@
     }
 }
 
-@media only screen and (max-width: 530px) {
+@media (max-width: 530px) {
     .banner {
         .content {
             .title {

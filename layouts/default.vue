@@ -18,12 +18,12 @@
 
 }
 
-@media only screen and (max-width: 800px) {
+@media (max-width: 800px) {
     .app {
         display: block;
 
         .content {
-            padding: 0em .7em 0em .7em;
+            padding: 0em 1.4em 0em 1.4em;
             padding-top: 49px;
             margin-left: initial;
         }

@@ -71,7 +71,7 @@ footer {
     height: 90%;
 }
 
-@media only screen and (max-width: 676px){
+@media (max-width: 676px){
     footer {
         .footer-main {
             grid-template-columns: initial;

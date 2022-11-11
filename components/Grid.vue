@@ -10,18 +10,18 @@
     gap: 15px;
 }
 
-@media only screen and (max-width: 1600px) {
+@media (max-width: 1600px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media only screen and (max-width: 677px) {
+@media (max-width: 677px) {
     .grid {
         grid-template-columns: 1fr;
     }
