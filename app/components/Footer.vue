@@ -1,6 +1,7 @@
 
 <template>
     <footer>
+        <div class="hl"></div>
         <div class="footer-main">
             <div class="left">
                 <div>
@@ -31,7 +32,9 @@ footer {
     font-size: 0.9em;
     color: #252525;
 
+
     .footer-main {
+        margin-top: 1.5em;
         margin-bottom: 1em;
 
         display: grid;
@@ -66,12 +69,18 @@ footer {
     }
 }
 
+.hl {
+    margin: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    width: 90%;
+}
+
 .vl {
     border-left: 1px solid rgba(0, 0, 0, 0.125);
     height: 90%;
 }
 
-@media (max-width: 676px){
+@media (max-width: 676px) {
     footer {
         .footer-main {
             grid-template-columns: initial;
@@ -79,7 +88,8 @@ footer {
 
             .left {
                 align-items: center;
-                img{
+
+                img {
                     width: 60px;
                     height: auto;
                 }

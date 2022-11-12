@@ -1,8 +1,10 @@
 <template>
     <div class="app">
         <Nav class="nav" />
-        <div class="content">
-            <slot />
+        <div class="content-wrapper">
+            <div class="content">
+                <slot />
+            </div>
             <Footer />
         </div>
     </div>
@@ -11,9 +13,14 @@
 .app {
     height: 100vh;
 
-    .content {
-        padding: .5em 2em;
+    .content-wrapper {
         margin-left: 250px;
+
+        .content {
+            margin: auto;
+            max-width: 900px;
+            padding: 0em 1em 0em 1em;
+        }
     }
 
 }
@@ -22,8 +29,7 @@
     .app {
         display: block;
 
-        .content {
-            padding: 0em 1em 0em 1em;
+        .content-wrapper {
             padding-top: 49px;
             margin-left: initial;
         }
