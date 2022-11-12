@@ -23,9 +23,7 @@ defineProps<Props>();
             <div>
                 {{ getDateFromArticle(article) }}
             </div>
-            <NuxtLink :to="'/aktualnosci/' + article.slug" class="read-more-btn">
-                Czytaj dalej
-            </NuxtLink>
+            <UnderlineButton :to="'/aktualnosci/' + article.slug">Czytaj dalej</UnderlineButton>
         </div>
     </div>
 </template>
@@ -67,39 +65,6 @@ defineProps<Props>();
     .bottom {
         display: flex;
         justify-content: space-between;
-
-        .read-more-btn {
-            text-decoration: none;
-            font-size: 1.15em;
-            font-weight: 500;
-            position: relative;
-
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                right: 2px;
-                bottom: -5px;
-
-                border-bottom: 3px solid var(--blue);
-            }
-
-            &::before {
-                width: 100%;
-            }
-
-            &::after {
-                width: 0%;
-                transition: width 0.2s;
-                border-bottom-color: var(--yellow);
-            }
-
-            &:hover {
-                &::after {
-                    width: 100%;
-                }
-            }
-        }
     }
 }
 </style>

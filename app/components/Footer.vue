@@ -1,7 +1,7 @@
 
 <template>
     <footer>
-        <div class="hl"></div>
+        <Divider />
         <div class="footer-main">
             <div class="left">
                 <div>
@@ -12,7 +12,7 @@
                     <div class="h2">W Wągrowcu</div>
                 </div>
             </div>
-            <div class="vl"></div>
+            <Divider vertical />
             <div class="right">
                 <Icon name="mdi:map-marker-outline" /> Ul. Kościuszki 49, 62-100 Wągrowiec<br />
                 <Icon name="mdi:email-outline" /> zsp2@wagrowiec.pl<br />
@@ -67,17 +67,6 @@ footer {
             line-height: 21px;
         }
     }
-}
-
-.hl {
-    margin: auto;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    width: 90%;
-}
-
-.vl {
-    border-left: 1px solid rgba(0, 0, 0, 0.125);
-    height: 90%;
 }
 
 @media (max-width: 676px) {

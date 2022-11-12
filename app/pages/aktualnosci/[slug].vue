@@ -3,9 +3,7 @@ const route = useRoute();
 const article = await getArticle(route.params["slug"] as string)
 </script>
 <template>
-    <NuxtLink to="/aktualnosci" class="back">
-        <Icon name="mdi:chevron-left" /> Aktualności
-    </NuxtLink>
+    <BackButton to="/aktualnosci">Aktualności</BackButton>
     <article>
         <h1>{{ article.title }}</h1>
         <NuxtImg v-if="article.imageUrl != null" :src="article.imageUrl" class="img-fluid img" />
@@ -13,13 +11,6 @@ const article = await getArticle(route.params["slug"] as string)
     </article>
 </template>
 <style lang="scss" scoped>
-.back {
-    text-decoration: none;
-    font-size: 1.25em;
-    display: block;
-    padding: 1em 0;
-}
-
 article {
     font-size: 1.15em;
     padding: .5em 1em;
@@ -29,7 +20,9 @@ article {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 650px;
+        max-width: min(100%, 650px);
+
+        padding: .6em 0;
     }
 }
 </style>

@@ -15,6 +15,7 @@
 
     .content-wrapper {
         margin-left: 250px;
+        padding-bottom: 10px;
 
         .content {
             margin: auto;
