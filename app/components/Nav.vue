@@ -18,12 +18,12 @@ const toggleExpanded = (val?: boolean) => {
 </script>
 
 <template>
-    <nav :data-expanded="expanded">
+    <nav :expanded="expanded">
         <div class="nav-toggle">
             <Icon :name="expanded ? 'mdi:close' : 'mdi:menu'" size="35" @click="() => toggleExpanded()" />
             <div>ZS2 Wągrowiec</div>
         </div>
-        <div class="content" :data-hidden="hidden">
+        <div class="content" :hidden="hidden">
             <div class="top">
                 <div class="nav-menu">
                     <NuxtLink v-for="item in data.menu" :key="item.title" :to="item.path" class="btn"
@@ -168,7 +168,7 @@ nav {
             left: 0px;
             height: initial;
 
-            &[data-hidden=true] {
+            &[hidden=true] {
                 display: none;
             }
         }
@@ -178,7 +178,7 @@ nav {
             transition: background-color 0.2s;
         }
 
-        &[data-expanded=true] {
+        &[expanded=true] {
             z-index: 10;
 
             .content {
