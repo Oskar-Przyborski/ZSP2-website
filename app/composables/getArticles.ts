@@ -1,13 +1,20 @@
-export const getArticles = async () => {
+export const getArticles = async (
+	max: number = 12,
+	page: number = 0,
+	orderby: string = "datetime desc"
+) => {
 	const sanity = useSanity();
-	const query = groq`*[_type=="article"] | order(datetime) {
+	const query = groq`*[_type=="article"] | order(${orderby})[$min...$max] {
         title,
         "slug": slug.current,
         "imageUrl": image.asset -> url,
         body,
         datetime
     }`;
-	return await sanity.fetch<Article[]>(query);
+	return await sanity.fetch<Article[]>(query, {
+		min: page * max,
+		max: (page + 1) * max,
+	});
 };
 
 export const getPreviewFromArticle = (
@@ -25,4 +32,14 @@ export const getPreviewFromArticle = (
 		}
 	}
 	return preview;
+};
+
+export const getDateFromArticle = (article: Article) => {
+	const formatter = Intl.DateTimeFormat("pl-PL", {
+		day: "2-digit",
+		month: "short",
+		year: "numeric",
+		weekday: "short",
+	});
+	return formatter.format(new Date(article.datetime));
 };
