@@ -23,7 +23,7 @@
         display: block;
 
         .content {
-            padding: 0em 1.4em 0em 1.4em;
+            padding: 0em 1em 0em 1em;
             padding-top: 49px;
             margin-left: initial;
         }

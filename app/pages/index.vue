@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const articles = await getArticles(2)
+</script>
+
 <template>
     <main>
         <SchoolBanner />
@@ -17,13 +21,15 @@
         </section>
         <section>
             <div>
-                <h1>Aktualności</h1>
-                <!-- <div class="news-feed">
-                    <ArticleCard imageUrl="/p1.webp" title="II miejsce szachistów"
-                        content="4. listopada w Szkole Podstawowej nr 2 w Wągrowcu odbyły Mistrzostwa Powiatu SZS w Szachach Drużynowych. W składzie reprezentacji naszej szkoły wystąpili: Maja Ciesiółka, Michał Kubanek, Szymon Lihs, Radosław Wieczorek, Bartłomiej Cholewiński i Mikołaj Grewling. Tym razem bezpośredni pojedynek z najgroźniejszym rywalem miał miejsce już w pierwszej rundzie (w ubiegłym roku miało to miejsce w ostatniej rundzie). Wynik tego meczu był remisowy 2:2 ze wskazaniem na ZS2, bo zdobyliśmy punkty na pierwszych dwóch szachownicach. Po dziesięciu rundach okazało się, że minimalne straty w małych punktach “zepchnęły” naszych na 2. miejsce. Zacięta walka trwała ponad cztery godziny. Drugie miejsce też dało awans do rozgrywek na szczeblu wojewódzkim. Gratulacje!" />
-                    <ArticleCard imageUrl="/p2.jpg" title="Wieczór z poezją"
-                        content="W ramach 45. Międzynarodowego Listopada Poetyckiego na Ziemi Wągrowieckiej już w najbliższy piątek w naszej szkole odbędzie się Wieczór z poezją pt. „Otuleni słowem”. Zapraszamy! Wstęp wolny!" />
-                </div> -->
+                <h1>
+                    <NuxtLink to="/aktualnosci" style="text-decoration:none">
+                        Aktualności
+                        <Icon name="mdi:chevron-right" size="30" />
+                    </NuxtLink>
+                </h1>
+                <div class="articles">
+                    <ArticleCard v-for="article in articles" :article="article" :key="article.slug" />
+                </div>
             </div>
         </section>
     </main>
@@ -33,14 +39,14 @@ section {
     margin: 2.5em 0;
 }
 
-.news-feed {
+.articles {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
 @media (max-width: 676px) {
-    .news-feed {
+    .articles {
         grid-template-columns: 1fr;
     }
 }
