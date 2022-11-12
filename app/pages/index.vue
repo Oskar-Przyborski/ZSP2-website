@@ -34,6 +34,7 @@ const articles = await getArticles(2)
         </section>
     </main>
 </template>
+
 <style lang="scss" scoped>
 section {
     margin: 2.5em 0;

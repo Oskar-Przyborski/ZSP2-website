@@ -2,6 +2,7 @@
 const route = useRoute();
 const article = await getArticle(route.params["slug"] as string)
 </script>
+
 <template>
     <BackButton to="/aktualnosci">Aktualności</BackButton>
     <article>
@@ -11,16 +12,18 @@ const article = await getArticle(route.params["slug"] as string)
         <SanityContent :blocks="article.body" />
     </article>
 </template>
+
 <style lang="scss" scoped>
 article {
     font-size: 1.05em;
     padding: 1em 1.2em;
     border: 1px solid rgba(0, 0, 0, 0.125);
 
-    .date{
+    .date {
         font-size: 0.9em;
     }
-    .title{
+
+    .title {
         margin: 0.6em 0;
     }
 

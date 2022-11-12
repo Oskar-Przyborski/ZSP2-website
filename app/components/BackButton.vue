@@ -4,12 +4,14 @@ interface Props {
 }
 defineProps<Props>()
 </script>
+
 <template>
     <NuxtLink :to="to" class="back">
         <Icon name="mdi:chevron-left" size="25" />
         <slot />
     </NuxtLink>
 </template>
+
 <style scoped>
 .back {
     text-decoration: none;

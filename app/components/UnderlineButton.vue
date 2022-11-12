@@ -10,6 +10,7 @@ defineProps<Props>()
         <slot />
     </NuxtLink>
 </template>
+
 <style lang="scss" scoped>
 .underline-btn {
     text-decoration: none;

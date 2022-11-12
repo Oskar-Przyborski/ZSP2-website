@@ -14,11 +14,12 @@ body {
 * {
     box-sizing: border-box;
 }
-a{
+
+a {
     color: inherit;
 }
 
-.img-fluid{
+.img-fluid {
     max-width: 100%;
     height: auto;
 }

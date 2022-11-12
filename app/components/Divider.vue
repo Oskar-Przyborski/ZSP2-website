@@ -1,9 +1,10 @@
 <script setup lang="ts">
 interface Props {
-    vertical: boolean
+    vertical?: boolean
 }
 withDefaults(defineProps<Props>(), { vertical: false })
 </script>
+
 <template>
     <div :class="vertical ? 'vl' : 'hl'"></div>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <Nav class="nav" />
+        <Nav />
         <div class="content-wrapper">
             <div class="content">
                 <slot />
@@ -11,8 +11,6 @@
 </template> 
 <style scoped lang="scss">
 .app {
-    height: 100vh;
-
     .content-wrapper {
         margin-left: 250px;
         padding-bottom: 10px;

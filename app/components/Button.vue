@@ -6,13 +6,14 @@ interface Props {
 withDefaults(defineProps<Props>(), {
     targetBlank: false
 })
-
 </script>
+
 <template>
     <NuxtLink :to="url" :target="targetBlank ? '_blank' : '_self'" class="btn">
         <slot />
     </NuxtLink>
 </template>
+
 <style scoped lang="scss">
 .btn {
     border-radius: .5em;
@@ -22,7 +23,7 @@ withDefaults(defineProps<Props>(), {
     text-decoration: none;
 
     border: 2px solid currentColor;
-    
+
     &:hover {
         border: 2px solid var(--yellow);
         background-color: var(--yellow);

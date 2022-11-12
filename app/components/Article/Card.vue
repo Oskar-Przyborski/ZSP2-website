@@ -3,7 +3,6 @@ interface Props {
     article: Article
 }
 defineProps<Props>();
-
 </script>
 
 <template>
@@ -27,6 +26,7 @@ defineProps<Props>();
         </div>
     </div>
 </template>
+
 <style lang="scss" scoped>
 .news-card {
     padding: 1.3em;
