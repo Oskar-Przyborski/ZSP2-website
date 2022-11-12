@@ -1,6 +1,14 @@
 <script setup lang="ts">
+import { Serializers } from '@nuxtjs/sanity/dist/runtime/components/sanity-content';
+
 const route = useRoute();
 const article = await getArticle(route.params["slug"] as string)
+
+const serializers: Serializers = {
+    types: {
+        image: resolveComponent("PortableTextImage")
+    }
+}
 </script>
 
 <template>
@@ -9,7 +17,7 @@ const article = await getArticle(route.params["slug"] as string)
         <div class="date">{{ getDateFromArticle(article) }}</div>
         <h1 class="title">{{ article.title }}</h1>
         <NuxtImg v-if="article.imageUrl != null" :src="article.imageUrl" class="img-fluid img" />
-        <SanityContent :blocks="article.body" />
+        <SanityContent :blocks="article.body" :serializers="serializers" />
     </article>
 </template>
 
