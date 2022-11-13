@@ -8,6 +8,7 @@ export const getArticles = async (
         title,
         "slug": slug.current,
         "imageUrl": image.asset -> url,
+		showTitleImage,
         body,
         datetime
     }`;
@@ -24,6 +25,7 @@ export const getArticle = async (slug: string): Promise<Article> => {
         "slug": slug.current,
         "imageUrl": image.asset -> url,
         body,
+		showTitleImage,
         datetime
 	}`;
 	return await sanity.fetch(query, { slug });

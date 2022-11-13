@@ -14,22 +14,23 @@ export default {
     },
     { type: "image", name: "image", title: "Zdjęcie tytułowe" },
     {
+      type: "boolean",
+      name: "showTitleImage",
+      title: "Wyświetl zdjęcie tytułowe",
+      description:
+        "Określa, czy na początku artykułu, powinno się wyświetlić zdjęcie tytułowe",
+      initialValue: () => true,
+    },
+    {
       name: "body",
       type: "array",
       title: "Body",
-      of: [
-        {
-          type: "block",
-        },
-        {
-          type: "image"
-        }
-      ],
+      of: [{ type: "block" }, { type: "image" }, { type: "tiktok-embed" }],
     },
     {
-        name: "datetime",
-        title: "Data",
-        type: "datetime"
-    }
+      name: "datetime",
+      title: "Data",
+      type: "datetime",
+    },
   ],
 };
