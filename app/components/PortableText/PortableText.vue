@@ -11,7 +11,8 @@ const serializers: Serializers = {
     marks: {
         "underline": resolveComponent("PortableTextUnderline"),
         "strike-through": resolveComponent("PortableTextStrike"),
-        "code": resolveComponent("PortableTextCode")
+        "code": resolveComponent("PortableTextCode"),
+        "link": resolveComponent("PortableTextLink")
     }
 }
 </script>
