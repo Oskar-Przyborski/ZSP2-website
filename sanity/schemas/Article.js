@@ -3,7 +3,12 @@ export default {
   name: "article",
   title: "Artykuł",
   fields: [
-    { type: "string", name: "title", title: "Tytuł" },
+    {
+      type: "string",
+      name: "title",
+      title: "Tytuł",
+      validation: (Rule) => Rule.required(),
+    },
     {
       type: "slug",
       name: "slug",
@@ -11,6 +16,7 @@ export default {
       options: {
         source: "title",
       },
+      validation: (Rule) => Rule.required(),
     },
     { type: "image", name: "image", title: "Zdjęcie tytułowe" },
     {
@@ -20,17 +26,20 @@ export default {
       description:
         "Określa, czy na początku artykułu, powinno się wyświetlić zdjęcie tytułowe",
       initialValue: () => true,
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "body",
       type: "array",
       title: "Body",
       of: [{ type: "block" }, { type: "image" }, { type: "tiktok-embed" }],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "datetime",
       title: "Data",
       type: "datetime",
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

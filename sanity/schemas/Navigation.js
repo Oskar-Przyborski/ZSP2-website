@@ -18,16 +18,19 @@ export default {
               type: "string",
               name: "title",
               title: "Nazwa",
+              validation: Rule => Rule.required()
             },
             {
               type: "string",
               name: "path",
               title: "Ścieżka",
+              validation: Rule => Rule.required()
             },
             {
               type: "string",
               name: "icon",
               title: "Ikona",
+              validation: Rule => Rule.required()
             },
           ],
           preview: {
