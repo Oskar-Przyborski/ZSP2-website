@@ -19,7 +19,7 @@
                 <Icon name="mdi:phone-outline" /> (67)2620347<br />
             </div>
         </div>
-        <div>
+        <div style="padding: 0 5px;">
             Copyright © 2022 Zespół Szkół nr 2 w Wągrowcu. Developed by Oskar Przyborski.
         </div>
     </footer>
@@ -30,10 +30,11 @@ footer {
     margin-top: 2em;
     text-align: center;
     font-size: 0.9em;
-    color: #252525;
+    color: #252525;    
 
 
     .footer-main {
+        padding: 0 10px;    
         margin-top: 1.5em;
         margin-bottom: 1em;
 
@@ -85,13 +86,6 @@ footer {
             }
 
         }
-    }
-
-    .vl {
-        border-left: initial;
-        height: initial;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-        width: 90%;
     }
 }
 </style>
