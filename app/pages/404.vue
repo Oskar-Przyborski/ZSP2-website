@@ -13,8 +13,9 @@
     text-align: center;
 
     .btn {
+        display: grid;
+        place-items: center;
         padding: .7em;
-        margin: 2em 0;
     }
 }
 </style>
