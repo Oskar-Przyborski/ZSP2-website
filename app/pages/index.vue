@@ -30,6 +30,7 @@ const { articles } = await getArticles(2)
                 <div class="articles">
                     <ArticleCard v-for="article in articles" :article="article" :key="article.slug" />
                 </div>
+                <div class="show-more"><Button to="/aktualnosci/1" class="btn">Pokaż więcej</Button></div>
             </div>
         </section>
     </main>
@@ -37,7 +38,7 @@ const { articles } = await getArticles(2)
 
 <style lang="scss" scoped>
 section {
-    margin: 2.5em 0;
+    margin: 2em 0;
 }
 
 .articles {
@@ -49,6 +50,16 @@ section {
 @media (max-width: 676px) {
     .articles {
         grid-template-columns: 1fr;
+    }
+}
+
+.show-more {
+    display: grid;
+    place-items: center;
+
+    .btn {
+        padding: .6em;
+        margin: 1em;
     }
 }
 </style>

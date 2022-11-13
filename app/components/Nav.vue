@@ -35,7 +35,7 @@ const toggleExpanded = (val?: boolean) => {
             </div>
             <div class="bottom">
                 <div class="socials-menu">
-                    <Button v-for="item in data.socials" :url="item.url" :target-blank="true">
+                    <Button v-for="item in data.socials" :to="item.url" :target-blank="true">
                         <Icon :name="item.icon" size="30" />
                     </Button>
                 </div>

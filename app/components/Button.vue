@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-    url: string,
+    to: string,
     targetBlank?: boolean
 }
 withDefaults(defineProps<Props>(), {
@@ -9,13 +9,16 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-    <NuxtLink :to="url" :target="targetBlank ? '_blank' : '_self'" class="btn">
+    <NuxtLink :to="to" :target="targetBlank ? '_blank' : '_self'" class="btn">
         <slot />
     </NuxtLink>
 </template>
 
 <style scoped lang="scss">
 .btn {
+    display: block;
+    width: max-content;
+    margin: 10px;
     border-radius: .5em;
     padding: .35em;
     transition: background-color 0.2s, color 0.1s, border 0.2s;
