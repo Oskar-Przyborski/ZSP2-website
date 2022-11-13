@@ -7,13 +7,21 @@ export const getArticles = async (
 	const query = groq`{
 		"all": count(*[_type=="article"]),
 		"articles":*[_type=="article"] | order(${orderby})[$min...$max] {
-       		title,
-        	"slug": slug.current,
-        	"imageUrl": image.asset -> url,
+			title,
+			"slug": slug.current,
+			"imageUrl": image.asset -> url,
+			body[]{
+				...,
+				_type == "image" => {
+					"asset": asset->{
+						altText, 
+						url
+  					}
+				}
+			},
 			showTitleImage,
-        	body,
-        	datetime
-    	}
+			datetime
+		}
 	}`;
 	return await sanity.fetch<{ articles: Article[]; all: number }>(query, {
 		min: page * max,
@@ -25,11 +33,19 @@ export const getArticle = async (slug: string): Promise<Article> => {
 	const sanity = useSanity();
 	const query = groq`*[_type=="article" && slug.current==$slug][0]{
 		title,
-        "slug": slug.current,
-        "imageUrl": image.asset -> url,
-        body,
+		"slug": slug.current,
+		"imageUrl": image.asset -> url,
+		body[]{
+			...,
+			_type == "image" => {
+				"asset": asset->{
+					altText, 
+					url
+				  }
+			}
+		},
 		showTitleImage,
-        datetime
+		datetime
 	}`;
 	return await sanity.fetch(query, { slug });
 };
