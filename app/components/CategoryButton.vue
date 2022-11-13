@@ -9,6 +9,7 @@ withDefaults(defineProps<Props>(), {
     targetBlank: false
 })
 </script>
+
 <template>
     <NuxtLink :to="path" :target="targetBlank ? '_blank' : '_self'" class="category-button">
         <div class="text">
@@ -20,6 +21,7 @@ withDefaults(defineProps<Props>(), {
         </div>
     </NuxtLink>
 </template>
+
 <style lang="scss" scoped>
 .category-button {
     font-size: 0.9em;

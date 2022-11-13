@@ -1,6 +1,6 @@
-
 <template>
     <footer>
+        <Divider />
         <div class="footer-main">
             <div class="left">
                 <div>
@@ -11,7 +11,7 @@
                     <div class="h2">W Wągrowcu</div>
                 </div>
             </div>
-            <div class="vl"></div>
+            <Divider vertical />
             <div class="right">
                 <Icon name="mdi:map-marker-outline" /> Ul. Kościuszki 49, 62-100 Wągrowiec<br />
                 <Icon name="mdi:email-outline" /> zsp2@wagrowiec.pl<br />
@@ -19,19 +19,23 @@
                 <Icon name="mdi:phone-outline" /> (67)2620347<br />
             </div>
         </div>
-        <div>
+        <div style="padding: 0 5px;">
             Copyright © 2022 Zespół Szkół nr 2 w Wągrowcu. Developed by Oskar Przyborski.
         </div>
     </footer>
 </template>
+
 <style lang="scss" scoped>
 footer {
     margin-top: 2em;
     text-align: center;
     font-size: 0.9em;
-    color: #252525;
+    color: #252525;    
+
 
     .footer-main {
+        padding: 0 10px;    
+        margin-top: 1.5em;
         margin-bottom: 1em;
 
         display: grid;
@@ -66,12 +70,7 @@ footer {
     }
 }
 
-.vl {
-    border-left: 1px solid rgba(0, 0, 0, 0.125);
-    height: 90%;
-}
-
-@media (max-width: 676px){
+@media (max-width: 676px) {
     footer {
         .footer-main {
             grid-template-columns: initial;
@@ -79,20 +78,14 @@ footer {
 
             .left {
                 align-items: center;
-                img{
+
+                img {
                     width: 60px;
                     height: auto;
                 }
             }
 
         }
-    }
-
-    .vl {
-        border-left: initial;
-        height: initial;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-        width: 90%;
     }
 }
 </style>

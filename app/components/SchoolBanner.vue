@@ -2,7 +2,6 @@
     <div class="banner">
         <div class="content">
             <div class="logo">
-                <!-- <NuxtImg src="godlo.jpg" alt="Godło Polski" width="200" /> -->
                 <NuxtImg src="logo.png" alt="Logo szkoły ZS2 Wągrowiec" width="200" />
             </div>
             <div class="title">
@@ -13,6 +12,7 @@
         </div>
     </div>
 </template>
+
 <style lang="scss" scoped>
 .banner {
     margin-top: .5em;
@@ -22,8 +22,6 @@
     background-size: cover;
     background-position-y: center;
 
-    // background-color: #aaa;
-    // background-blend-mode: multiply;
     .content {
         display: flex;
         gap: 20px;
