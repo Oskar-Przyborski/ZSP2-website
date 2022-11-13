@@ -5,13 +5,13 @@ const route = useRoute()
 const page = parsePage(route.params["page"] as string)
 
 if (page == 1 && route.params["page"] != "1")
-    navigateTo("/aktualnosci/1")
+    navigateTo("/aktualnosci/strona/1")
 
 
 const { all, articles } = await getArticles(PER_PAGE, page - 1)
 
 if (articles.length == 0 && all != 0)
-    navigateTo("/aktualnosci/1")
+    navigateTo("/aktualnosci/strona/1")
 
 
 const getPagesQuantity = (all: number, perPage: number) => Math.ceil(all / perPage)
@@ -29,10 +29,10 @@ const nextPage = getNextPage(page, getPagesQuantity(all, PER_PAGE));
             <ArticleCard v-for="article in articles" :key="article.slug" :article="article" />
         </Grid>
         <div class="pagination-btns">
-            <UnderlineButton :to="prevPage != null ? `/aktualnosci/${prevPage}` : ''" :disabled="prevPage == null">
+            <UnderlineButton :to="prevPage != null ? `/aktualnosci/strona/${prevPage}` : ''" :disabled="prevPage == null">
                 <Icon name="mdi:chevron-left" size="24" /> Poprzednia
             </UnderlineButton>
-            <UnderlineButton :to="nextPage != null ? `/aktualnosci/${nextPage}` : ''" :disabled="nextPage == null">
+            <UnderlineButton :to="nextPage != null ? `/aktualnosci/strona/${nextPage}` : ''" :disabled="nextPage == null">
                 Nastepna
                 <Icon name="mdi:chevron-right" size="24" />
             </UnderlineButton>
