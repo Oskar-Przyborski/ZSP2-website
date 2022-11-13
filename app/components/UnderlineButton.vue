@@ -1,12 +1,16 @@
 <script setup lang="ts">
 interface Props {
-    to: string
+    to: string,
+    disabled?: boolean
 }
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+    disabled: false
+})
+
 </script>
 
 <template>
-    <NuxtLink :to="to" class="underline-btn">
+    <NuxtLink :to="to" class="underline-btn" :class="disabled ? 'disabled' : ''">
         <slot />
     </NuxtLink>
 </template>
@@ -18,6 +22,10 @@ defineProps<Props>()
     font-weight: 500;
     position: relative;
 
+    &.disabled {
+        color: rgb(59, 59, 59)
+    }
+
     &::before,
     &::after {
         content: '';
@@ -26,6 +34,13 @@ defineProps<Props>()
         bottom: -5px;
 
         border-bottom: 3px solid var(--blue);
+
+    }
+
+    &.disabled {
+        &::before {
+            border-bottom-color: rgb(59, 59, 59);
+        }
     }
 
     &::before {
@@ -41,6 +56,12 @@ defineProps<Props>()
     &:hover {
         &::after {
             width: 100%;
+        }
+
+        &.disabled {
+            &::after {
+                width: 0%;
+            }
         }
     }
 }

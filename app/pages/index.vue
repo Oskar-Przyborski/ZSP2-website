@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const articles = await getArticles(2)
+const { articles } = await getArticles(2)
 </script>
 
 <template>

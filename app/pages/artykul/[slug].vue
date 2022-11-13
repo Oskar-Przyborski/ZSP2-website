@@ -4,7 +4,7 @@ const article = await getArticle(route.params["slug"] as string)
 </script>
 
 <template>
-    <BackButton to="/aktualnosci">Aktualności</BackButton>
+    <BackButton to="/aktualnosci/1">Aktualności</BackButton>
     <article>
         <div class="date">{{ getDateFromArticle(article) }}</div>
         <h1 class="title">{{ article.title }}</h1>

@@ -2,17 +2,20 @@ export const getArticles = async (
 	max: number = 12,
 	page: number = 0,
 	orderby: string = "datetime desc"
-): Promise<Article[]> => {
+): Promise<{ articles: Article[]; all: number }> => {
 	const sanity = useSanity();
-	const query = groq`*[_type=="article"] | order(${orderby})[$min...$max] {
-        title,
-        "slug": slug.current,
-        "imageUrl": image.asset -> url,
-		showTitleImage,
-        body,
-        datetime
-    }`;
-	return await sanity.fetch<Article[]>(query, {
+	const query = groq`{
+		"all": count(*[_type=="article"]),
+		"articles":*[_type=="article"] | order(${orderby})[$min...$max] {
+       		title,
+        	"slug": slug.current,
+        	"imageUrl": image.asset -> url,
+			showTitleImage,
+        	body,
+        	datetime
+    	}
+	}`;
+	return await sanity.fetch<{ articles: Article[]; all: number }>(query, {
 		min: page * max,
 		max: (page + 1) * max,
 	});
@@ -56,4 +59,14 @@ export const getDateFromArticle = (article: Article) => {
 		weekday: "short",
 	});
 	return formatter.format(new Date(article.datetime));
+};
+
+export const parsePage = (page: string) => {
+	function isNumeric(value: string) {
+		return /^-?\d+$/.test(value);
+	}
+	if (!isNumeric(page)) return 1;
+	const pageNum = parseInt(page);
+	if (pageNum <= 0) return 1;
+	return pageNum;
 };

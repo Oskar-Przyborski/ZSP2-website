@@ -22,7 +22,7 @@ defineProps<Props>();
             <div>
                 {{ getDateFromArticle(article) }}
             </div>
-            <UnderlineButton :to="'/aktualnosci/' + article.slug">Czytaj dalej</UnderlineButton>
+            <UnderlineButton :to="'/artykul/' + article.slug">Czytaj dalej</UnderlineButton>
         </div>
     </div>
 </template>
