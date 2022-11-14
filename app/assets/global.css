@@ -11,6 +11,12 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+@media (max-width: 800px) {
+    body[scrollable=true] {
+        overflow: hidden;
+    }
+}
+
 * {
     box-sizing: border-box;
 }

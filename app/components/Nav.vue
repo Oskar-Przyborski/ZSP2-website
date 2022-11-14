@@ -6,7 +6,7 @@ const hidden = ref(true)
 
 const toggleExpanded = (val?: boolean) => {
     expanded.value = typeof val !== 'undefined' ? val : !expanded.value
-    document.body.style.overflow = expanded.value ? 'hidden' : ''
+    document.body.setAttribute("scrollable", (expanded.value).toString())
 
     if (expanded.value) {
         hidden.value = false;
