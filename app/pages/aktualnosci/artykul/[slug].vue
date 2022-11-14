@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const route = useRoute();
 const article = await getArticle(route.params["slug"] as string)
+
+if (article.slug == null) {
+    throwError({ statusCode: 404, statusMessage: "Nie znaleziono artykulu", data: { "showMenu": false } })
+}
 </script>
 
 <template>
@@ -8,7 +12,8 @@ const article = await getArticle(route.params["slug"] as string)
     <article>
         <div class="date">{{ getDateFromArticle(article) }}</div>
         <h1 class="title">{{ article.title }}</h1>
-        <NuxtImg v-if="article.imageUrl != null && article.showTitleImage" :src="article.imageUrl" class="img-fluid img" />
+        <NuxtImg v-if="article.imageUrl != null && article.showTitleImage" :src="article.imageUrl"
+            class="img-fluid img" />
         <PortableText :blocks="article.body" />
     </article>
 </template>
