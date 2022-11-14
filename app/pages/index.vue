@@ -30,7 +30,7 @@ const { articles } = await getArticles(2)
                 <div class="articles">
                     <ArticleCard v-for="article in articles" :article="article" :key="article.slug" />
                 </div>
-                <div class="show-more"><Button to="/aktualnosci/1" class="btn">Pokaż więcej</Button></div>
+                <div class="show-more"><Button to="/aktualnosci/strona/1" class="btn">Pokaż więcej</Button></div>
             </div>
         </section>
     </main>
