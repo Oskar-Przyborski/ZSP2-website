@@ -2,7 +2,7 @@ export default {
   type: "document",
   name: "navigation",
   title: "Nawigacja",
-  __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
+  __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"], //remove this line to create new navigation, if previous doesnt exist
   fields: [
     {
       title: "Menu",
