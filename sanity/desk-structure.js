@@ -1,10 +1,21 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { MdOutlineArticle, MdOutlineNavigation } from "react-icons/md";
+import {
+  MdOutlineArticle,
+  MdOutlineWeb,
+  MdOutlineNavigation,
+} from "react-icons/md";
 export default () =>
   S.list()
     .title("Treści")
     .items([
+      S.documentTypeListItem("article")
+        .title("Artykuły")
+        .icon(MdOutlineArticle),
+      S.documentTypeListItem("page")
+        .title("Strony")
+        .icon(MdOutlineWeb),
       S.listItem()
+        .id("navigation")
         .title("Nawigacja")
         .icon(MdOutlineNavigation)
         .child(
@@ -14,7 +25,4 @@ export default () =>
             .schemaType("navigation")
             .documentId("singleton-navigation")
         ),
-      S.documentTypeListItem("article")
-        .title("Artykuły")
-        .icon(MdOutlineArticle),
     ]);

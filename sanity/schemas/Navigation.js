@@ -1,3 +1,5 @@
+import NavigationCategory from "./Objects/NavigationCategory";
+
 export default {
   type: "document",
   name: "navigation",
@@ -8,39 +10,7 @@ export default {
       title: "Menu",
       name: "menu",
       type: "array",
-      of: [
-        {
-          type: "object",
-          name: "navigation-item",
-          title: "Pozycja nawigacji",
-          fields: [
-            {
-              type: "string",
-              name: "title",
-              title: "Nazwa",
-              validation: Rule => Rule.required()
-            },
-            {
-              type: "string",
-              name: "path",
-              title: "Ścieżka",
-              validation: Rule => Rule.required()
-            },
-            {
-              type: "string",
-              name: "icon",
-              title: "Ikona",
-              validation: Rule => Rule.required()
-            },
-          ],
-          preview: {
-            select: {
-              title: "title",
-              subtitle: "icon",
-            },
-          },
-        },
-      ],
+      of: [{type: "navigation-category"}],
     },
     {
       title: "Social Media",

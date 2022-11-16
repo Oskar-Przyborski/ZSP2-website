@@ -26,9 +26,9 @@ const toggleExpanded = (val?: boolean) => {
         <div class="content" :hidden="hidden">
             <div class="top">
                 <div class="nav-menu">
-                    <NuxtLink v-for="item in data.menu" :key="item.title" :to="item.path" class="btn"
+                    <NuxtLink v-for="item in data.menu" :key="item.title" :to="'/'+item.path" class="btn"
                         @click="() => toggleExpanded(false)"
-                        :class="item.path == '/' + $route.path.split('/')[1] ? 'active' : null" :title="item.title">
+                        :class="item.path == $route.path.split('/')[1] ? 'active' : null" :title="item.title">
                         <Icon :name="item.icon" size="23" />&nbsp;&nbsp;{{ item.title }}
                     </NuxtLink>
                 </div>

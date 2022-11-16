@@ -18,12 +18,12 @@ export const getNavData = async () => {
 		{
 			title: "Home",
 			icon: "mdi:home-outline",
-			path: "/",
+			path: "",
 		},
 		{
 			title: "Aktualności",
 			icon: "mdi:newspaper-variant-outline",
-			path: "/aktualnosci",
+			path: "aktualnosci",
 		}
 	);
 	return data;
