@@ -1,3 +1,6 @@
+import internalLink from "./internalLink";
+import link from "./link";
+
 export default {
   title: "Body",
   name: "body",
@@ -6,26 +9,7 @@ export default {
     {
       type: "block",
       marks: {
-        annotations: [
-          {
-            name: "link",
-            type: "object",
-            title: "link",
-            fields: [
-              {
-                name: "href",
-                type: "url",
-                title: "URL",
-              },
-              {
-                name: "targetBlank",
-                type: "boolean",
-                title: "Nowa karta",
-                description: "Otwórz link w nowej karcie",
-              },
-            ],
-          },
-        ],
+        annotations: [internalLink, link],
       },
     },
     { type: "image" },

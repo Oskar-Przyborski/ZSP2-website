@@ -12,7 +12,8 @@ const serializers: Serializers = {
         "underline": resolveComponent("PortableTextUnderline"),
         "strike-through": resolveComponent("PortableTextStrike"),
         "code": resolveComponent("PortableTextCode"),
-        "link": resolveComponent("PortableTextLink")
+        "link": resolveComponent("PortableTextLink"),
+        "internal-link": resolveComponent("PortableTextInternalLink"),
     }
 }
 </script>
