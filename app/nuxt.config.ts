@@ -6,7 +6,11 @@ export default defineNuxtConfig({
 	sanity: {
 		projectId: "vm3xce09",
 		dataset:
-			process.env.ENV == "DEVELOPMENT" ? "development" :  "production",
+			process.env.ENV == "DEVELOPMENT" ? "development" : "production",
 		useCdn: true,
+	},
+	routeRules: {
+		"/_ipx/**": { swr: false },
+		"/**": { swr: true },
 	},
 });
