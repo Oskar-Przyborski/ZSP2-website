@@ -9,8 +9,4 @@ export default defineNuxtConfig({
 			process.env.ENV == "DEVELOPMENT" ? "development" : "production",
 		useCdn: true,
 	},
-	routeRules: {
-		"/_ipx/**": { swr: false },
-		"/**": { swr: true },
-	},
 });
