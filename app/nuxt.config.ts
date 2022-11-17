@@ -5,7 +5,8 @@ export default defineNuxtConfig({
 	css: ["~/assets/global.css"],
 	sanity: {
 		projectId: "vm3xce09",
-		dataset: "production",
-		useCdn: true
+		dataset:
+			process.env.ENV == "DEVELOPMENT" ? "development" : "production",
+		useCdn: true,
 	},
 });
