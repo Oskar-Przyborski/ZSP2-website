@@ -18,7 +18,7 @@ if (!isFound) setResponseStatus(404, "Nie znaleziono artykulu");
 		/>
 		<PortableText :blocks="article.body" />
 	</article>
-    <ErrorMessage message="Nie znaleziono artykułu"/>
+    <ErrorMessage v-else message="Nie znaleziono artykułu"/>
 </template>
 
 <style lang="scss" scoped>
