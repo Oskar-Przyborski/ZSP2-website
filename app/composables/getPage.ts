@@ -1,25 +1,7 @@
-export const groqPortableTextSelector = `
-body[]{
-	...,
-	markDefs[]{
-		...,
-		_type == "internal-link" => {
-			"path": reference->path
-		}
-	},
-	_type == "image" => {
-				"asset": asset->{
-						altText, 
-						url
-				 }
-		  },
-}
-`;
-
 export const getPageFromPath = (path: string[]) => {
 	const query = groq`*[_type=="page" && path==$path][0]{
 		title,
-		${groqPortableTextSelector},
+		body,
 		path
 	}`;
 	const data = useSanity().fetch<{

@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template>
     <blockquote class="tiktok-embed" :data-video-id="id"
-        style="max-width: 605px;min-width: 325px;">
+        style="max-width: 605px">
         <section>
         </section>
     </blockquote>

@@ -27,7 +27,7 @@ export const getArticle = async (slug: string): Promise<Article> => {
 		title,
 		"slug": slug.current,
 		"imageUrl": image.asset -> url,
-		${groqPortableTextSelector},
+		body,
 		showTitleImage,
 		datetime
 	}`;

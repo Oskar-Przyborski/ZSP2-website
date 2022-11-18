@@ -7,6 +7,7 @@ const serializers: Serializers = {
     types: {
         "image": resolveComponent("PortableTextImage"),
         "tiktok-embed": resolveComponent("PortableTextTikTok"),
+        "grid": resolveComponent("PortableTextGrid"),
     },
     marks: {
         "underline": resolveComponent("PortableTextUnderline"),
