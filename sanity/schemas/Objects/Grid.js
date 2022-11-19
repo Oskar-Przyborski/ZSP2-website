@@ -10,7 +10,11 @@ export default {
       title: "Elementy",
       name: "elements",
       type: "array",
-      of: [{ type: "image" }, { type: "tiktok-embed" }, {type: "category-button"}],
+      of: [
+        { type: "image" },
+        { type: "tiktok-embed" },
+        { type: "page-button" },
+      ],
     },
   ],
   preview: {
@@ -18,7 +22,7 @@ export default {
       items: "elements",
     },
     prepare({ items }) {
-      return { title: `Siatka, ${items.length} elementów` };
+      return { title: `Siatka, ${items ? items?.length : "0"} elementów` };
     },
   },
 };

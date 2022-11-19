@@ -4,7 +4,7 @@ defineProps<{ elements: any[] }>();
 const types = new Map<string, any>();
 types.set("image", resolveComponent("PortableTextImage"));
 types.set("tiktok-embed", resolveComponent("PortableTextTikTok"));
-types.set("category-button", resolveComponent("PortableTextCategoryButton"));
+types.set("page-button", resolveComponent("PortableTextPageButton"));
 
 const extractProps = (item: any) => {
 	if (item) {

@@ -1,9 +1,9 @@
-import {MdCategory} from 'react-icons/md'
+import { MdOutlinePageview } from "react-icons/md";
 export default {
   type: "object",
-  name: "category-button",
-  title: "Kategoria",
-  icon: MdCategory,
+  name: "page-button",
+  title: "Odnośnik strony",
+  icon: MdOutlinePageview,
   fields: [
     {
       title: "Tytuł",
@@ -18,7 +18,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Link wewnętrzny",
+      title: "Strona wewnętrzna",
       name: "internal",
       type: "boolean",
       validation: (Rule) => Rule.required(),
