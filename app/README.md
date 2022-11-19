@@ -1,1 +1,0 @@
-# Projekt strony internetowej dla ZSP2 Wągrowiec
