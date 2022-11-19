@@ -9,6 +9,7 @@ const serializers: Serializers = {
         "tiktok-embed": resolveComponent("PortableTextTikTok"),
         "grid": resolveComponent("PortableTextGrid"),
         "page-button": resolveComponent("PortableTextPageButton"),
+        "file-button": resolveComponent("PortableTextFileButton"),
     },
     marks: {
         "underline": resolveComponent("PortableTextUnderline"),

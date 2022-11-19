@@ -14,6 +14,7 @@ export default {
         { type: "image" },
         { type: "tiktok-embed" },
         { type: "page-button" },
+        { type: "file-button" },
       ],
     },
   ],

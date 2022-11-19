@@ -11,6 +11,7 @@ import NavigationCategory from "./Objects/NavigationCategory";
 import TiktokEmbed from "./Objects/TiktokEmbed";
 import Grid from "./Objects/Grid";
 import PageButton from "./Objects/PageButton";
+import FileButton from "./Objects/FileButton";
 
 export default createSchema({
   name: "default",
@@ -22,6 +23,7 @@ export default createSchema({
     Body,
     NavigationCategory,
     Grid,
-    PageButton
+    PageButton,
+    FileButton,
   ]),
 });
