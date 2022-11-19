@@ -11,4 +11,4 @@ Sanity to Headless CMS, który w prosty sposób umożliwia zardządzanie treści
 
 Jego edytor treści - Sanity Studio - jest całkowicie konfigurowalny co sprawia że jest bardzo uniwersalny.
 
-[UI Sanity Studio](https://i.imgur.com/klWLlZ8.png)
+![UI Sanity Studio](https://i.imgur.com/klWLlZ8.webp)
