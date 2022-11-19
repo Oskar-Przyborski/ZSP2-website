@@ -10,7 +10,7 @@ export default {
       title: "Elementy",
       name: "elements",
       type: "array",
-      of: [{ type: "image" }, { type: "tiktok-embed" }],
+      of: [{ type: "image" }, { type: "tiktok-embed" }, {type: "category-button"}],
     },
   ],
   preview: {

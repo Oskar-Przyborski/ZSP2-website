@@ -18,7 +18,6 @@ export default {
       type: "string",
       validation: (Rule) =>
         Rule.required().custom((path) => {
-          console.log("path");
           const regex = RegExp("\/[a-z0-9-]*[\/a-z0-9-]*(?<!\/)");
           if (regex.exec(path)[0] == path) return true;
           else return "Ścieżka nieprawidłowa";
