@@ -30,6 +30,14 @@ export default defineNuxtConfig({
 					sizes: "32x32",
 					href: "/Logo32x32.webp",
 				},
+				{
+					rel: "preconnect",
+					href: "https://fonts.gstatic.com"
+				},
+				{
+					rel: "preconnect",
+					href: "https://fonts.googleapis.com"
+				}
 			],
 		},
 	},
