@@ -4,7 +4,7 @@
         <div class="footer-main">
             <div class="left">
                 <div>
-                    <NuxtImg src="/godlo.png" width="80" />
+                    <NuxtImg src="/godlo.webp" width="80" height="95" />
                 </div>
                 <div class="text">
                     <div class="h1">Zespół Szkół nr 2</div>
