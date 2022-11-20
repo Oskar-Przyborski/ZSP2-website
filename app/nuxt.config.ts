@@ -9,4 +9,25 @@ export default defineNuxtConfig({
 			process.env.ENV == "DEVELOPMENT" ? "development" : "production",
 		useCdn: true,
 	},
+	app: {
+		head: {
+			link: [
+				{
+					rel: "icon",
+					sizes: "192x192",
+					href: "/Logo192x192.webp",
+				},
+				{
+					rel: "icon",
+					sizes: "32x32",
+					href: "/Logo32x32.webp",
+				},
+				{
+					rel: "apple-touch-icon",
+					sizes: "32x32",
+					href: "/Logo32x32.webp",
+				},
+			],
+		},
+	},
 });
