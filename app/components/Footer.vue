@@ -4,7 +4,7 @@
         <div class="footer-main">
             <div class="left">
                 <div>
-                    <NuxtImg src="/godlo.webp" width="80" height="95" />
+                    <NuxtImg src="/godlo.webp" width="80" height="95" alt="Godło Polski" />
                 </div>
                 <div class="text">
                     <div class="h1">Zespół Szkół nr 2</div>

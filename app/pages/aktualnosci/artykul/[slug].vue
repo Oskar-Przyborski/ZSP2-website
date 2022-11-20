@@ -12,13 +12,14 @@ if (!isFound) setResponseStatus(404, "Nie znaleziono artykulu");
 		<div class="date">{{ getDateFromArticle(article) }}</div>
 		<h1 class="title">{{ article.title }}</h1>
 		<NuxtImg
-			v-if="article.imageUrl != null && article.showTitleImage"
-			:src="article.imageUrl"
+			v-if="article.image != null && article.showTitleImage"
+			:src="article.image.url"
+			:alt="article.image.altText"
 			class="img-fluid img"
 		/>
 		<PortableText :blocks="article.body" />
 	</article>
-    <ErrorMessage v-else message="Nie znaleziono artykułu"/>
+	<ErrorMessage v-else message="Nie znaleziono artykułu" />
 </template>
 
 <style lang="scss" scoped>

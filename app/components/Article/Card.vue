@@ -8,8 +8,8 @@ defineProps<Props>();
 <template>
     <div class="news-card">
         <div class="top">
-            <div class="image-wrapper" v-if="article.imageUrl != null">
-                <NuxtImg :src="article.imageUrl" />
+            <div class="image-wrapper" v-if="article.image != null">
+                <NuxtImg :src="article.image?.url" :alt="article.image.altText"/>
             </div>
             <div class="text">
                 <div class="title">{{ article.title }}</div>

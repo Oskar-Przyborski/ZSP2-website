@@ -9,7 +9,7 @@ export const getArticles = async (
 		"articles":*[_type=="article"] | order(${orderby})[$min...$max] {
 			title,
 			"slug": slug.current,
-			"imageUrl": image.asset -> url,
+			"image": image.asset -> { url, altText },
 			body[],
 			showTitleImage,
 			datetime
@@ -26,7 +26,7 @@ export const getArticle = async (slug: string): Promise<Article> => {
 	const query = groq`*[_type=="article" && slug.current==$slug][0]{
 		title,
 		"slug": slug.current,
-		"imageUrl": image.asset -> url,
+		"image": image.asset -> image.asset -> { url, altText },
 		body,
 		showTitleImage,
 		datetime
