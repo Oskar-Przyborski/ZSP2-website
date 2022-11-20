@@ -26,7 +26,7 @@ export const getArticle = async (slug: string): Promise<Article> => {
 	const query = groq`*[_type=="article" && slug.current==$slug][0]{
 		title,
 		"slug": slug.current,
-		"image": image.asset -> image.asset -> { url, altText },
+		"image": image.asset -> { url, altText },
 		body,
 		showTitleImage,
 		datetime
