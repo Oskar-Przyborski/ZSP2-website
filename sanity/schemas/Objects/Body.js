@@ -30,9 +30,10 @@ export default {
       },
     },
     { type: "image" },
-    { type: "tiktok-embed" },
-    { type: "grid" },
     { type: "page-button" },
     { type: "file-button" },
+    { type: "grid" },
+    { type: "tiktok-embed" },
+    { type: "youtube-embed" },
   ],
 };

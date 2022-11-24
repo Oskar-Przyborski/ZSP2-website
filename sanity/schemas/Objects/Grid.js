@@ -11,10 +11,11 @@ export default {
       name: "elements",
       type: "array",
       of: [
-        { type: "image" },
-        { type: "tiktok-embed" },
         { type: "page-button" },
         { type: "file-button" },
+        { type: "image" },
+        { type: "tiktok-embed" },
+        { type: "youtube-embed" },
       ],
     },
   ],

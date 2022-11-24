@@ -6,6 +6,7 @@ types.set("image", resolveComponent("PortableTextImage"));
 types.set("tiktok-embed", resolveComponent("PortableTextTikTok"));
 types.set("page-button", resolveComponent("PortableTextPageButton"));
 types.set("file-button", resolveComponent("PortableTextFileButton"));
+types.set("youtube-embed", resolveComponent("PortableTextYouTube"));
 
 const extractProps = (item: any) => {
 	if (item) {
