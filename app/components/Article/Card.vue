@@ -29,6 +29,7 @@ defineProps<Props>();
 
 <style lang="scss" scoped>
 .news-card {
+    margin: 10px;
     padding: 1.3em;
     border: 1px solid rgba(0, 0, 0, 0.125);
 

@@ -78,7 +78,6 @@ section {
 .articles {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 20px;
 }
 
 @media (max-width: 676px) {
