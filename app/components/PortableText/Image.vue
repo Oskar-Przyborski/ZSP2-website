@@ -12,16 +12,18 @@ const data = await useSanity().fetch<{ url: string; altText: string }>(
 </script>
 
 <template>
-	<NuxtImg :src="data.url" :alt="data.altText" />
+	<div class="img-wrapper">
+		<NuxtImg :src="data.url" :alt="data.altText" />
+	</div>
 </template>
 
-<style scoped>
-img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: min(100%, 650px);
-
-	padding: 0.6em 0;
+<style scoped lang="scss">
+.img-wrapper {
+	margin: 8px;
+	display: grid;
+	place-items: center;
+	img {
+		max-width: min(100%, 650px);
+	}
 }
 </style>

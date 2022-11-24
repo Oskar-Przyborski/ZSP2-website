@@ -27,6 +27,7 @@ withDefaults(defineProps<Props>(), {
     font-size: 0.9em;
     border: 1px solid rgba(0, 0, 0, 0.125);
     text-decoration: none;
+    margin: 8px;
 
     display: flex;
     justify-content: space-between;
