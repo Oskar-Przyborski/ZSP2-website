@@ -21,7 +21,8 @@ useHead({
 				<CategoryButton
 					title="Kalendarz roku szkolnego"
 					description="Sprawdź kiedy najbliższe wolne"
-					path="/"
+					path="https://cdn.sanity.io/files/vm3xce09/production/d969d2aad847829068119cbbc1724f2bd05f3724.pdf"
+					targetBlank
 				/>
 				<CategoryButton
 					title="Matura 2023"
@@ -36,8 +37,7 @@ useHead({
 				<CategoryButton
 					title="Konkursy"
 					description="Spróbuj swoich sił!"
-					path="https://cdn.sanity.io/files/vm3xce09/production/d969d2aad847829068119cbbc1724f2bd05f3724.pdf"
-					targetBlank
+					path="/konkursy"
 				/>
 				<CategoryButton
 					title="Komitet rodzicielski"
