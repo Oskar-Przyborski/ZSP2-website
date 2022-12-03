@@ -73,7 +73,7 @@ useHead({
 			<Grid>
 				<Major
 					tag="LICEUM"
-					title="Akademicka Szkoła politechniczna"
+					title="Akademicka Szkoła Politechniczna"
 					description="Wydaje mi się że nudne, ale możesz przyjść"
 					extenstions="Matematyka i fizyka albo chemia"
 				/>
