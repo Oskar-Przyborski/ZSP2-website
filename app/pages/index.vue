@@ -42,7 +42,8 @@ useHead({
 				<CategoryButton
 					title="Komitet rodzicielski"
 					description="Wpłata dla komitetu"
-					path="/"
+					path="https://cdn.sanity.io/files/vm3xce09/production/425f8473972c3cdedfea0c1d9931ede7f2ccee2a.pdf"
+					targetBlank
 				/>
 			</Grid>
 		</section>
