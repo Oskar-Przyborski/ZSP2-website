@@ -70,21 +70,75 @@ useHead({
 		</section>
 		<section>
 			<h1>Nasze kierunki</h1>
-			<h3>Liceum</h3>
 			<Grid>
-				<CategoryButton title="Akademicka Szkoła politechniczna" path="/" description="Wydaje mi się że nudne, ale możesz przyjść"/>
-				<CategoryButton title="Klasa Bezpieczeństwa Publicznego" path="/" description="Jak lubisz mundury :D"/>
-				<CategoryButton title="Klasa Pedagogiczna" path="/" description="Interesujesz się psychologią bądź pedagogiką?"/>
-				<CategoryButton title="Klasa Rehabilitacyjno-Medyczna" path="/" description="Wyleczymy cię z twoich problemów :P"/>
-				<CategoryButton title="Klasa Geograficzno-Językowa" path="/" description="Niemiecki, Hiszpański, Angielski? Wybieraj"/>
-			</Grid>
-			<h3>Technikum</h3>
-			<Grid>
-				<CategoryButton title="Techink Technologi Chemicznej" path="/" description="Zawsze wlewaj kwas do wody!"/>
-				<CategoryButton title="Techink Ekonomista" path="/" description="Kiedy lubisz liczyć pieniążki"/>
-				<CategoryButton title="Techink Hotelarstwa" path="/" description="Szczerze, nie wiem co tu napisać"/>
-				<CategoryButton title="Techink Programista" path="/" description="Dla miłośników parzenia kawy"/>
-				<CategoryButton title="Techink Informatyk" path="/" description="Klasowy informatyk? Tu jest twoje miejsce"/>
+				<Major
+					tag="LICEUM"
+					title="Akademicka Szkoła politechniczna"
+					description="Wydaje mi się że nudne, ale możesz przyjść"
+					extenstions="Matematyka i fizyka albo chemia"
+				/>
+				<Major
+					tag="LICEUM"
+					title="Klasa Bezpieczeństwa Publicznego"
+					description="Jak lubisz mundury :D"
+					extenstions="Geografia i WOS"
+				/>
+				<Major
+					tag="LICEUM"
+					title="Klasa Pedagogiczna"
+					path="/"
+					description="Interesujesz się psychologią bądź pedagogiką?"
+					extenstions="Język polski i biologia"
+				/>
+				<Major
+					tag="LICEUM"
+					title="Klasa Rehabilitacyjno-Medyczna"
+					path="/"
+					description="Wyleczymy cię z twoich problemów :P"
+					extenstions="Biologia i chemia"
+				/>
+				<Major
+					tag="LICEUM"
+					title="Klasa Geograficzno-Językowa"
+					path="/"
+					description="Niemiecki, Hiszpański, Angielski? Wybieraj"
+					extenstions="Geografia i język obcy"
+				/>
+				<Major
+					tag="TECHNIKUM"
+					title="Techink Technologii Chemicznej"
+					path="/"
+					description="Zawsze wlewaj kwas do wody!"
+					extenstions="Chemia i język obcy"
+				/>
+				<Major
+					tag="TECHNIKUM"
+					title="Techink Ekonomista"
+					path="/"
+					description="Kiedy lubisz liczyć pieniążki"
+					extenstions="Matematyka i język obcy"
+				/>
+				<Major
+					tag="TECHNIKUM"
+					title="Techink Hotelarstwa"
+					path="/"
+					description="Szczerze, nie wiem co tu napisać"
+					extenstions="Geografia i język obcy"
+				/>
+				<Major
+					tag="TECHNIKUM"
+					title="Techink Programista"
+					path="/"
+					description="Dla miłośników parzenia kawy"
+					extenstions="Matematyka i język obcy"
+				/>
+				<Major
+					tag="TECHNIKUM"
+					title="Techink Informatyk"
+					path="/"
+					description="Klasowy informatyk? Tu jest twoje miejsce"
+					extenstions="Matematyka i język obcy"
+				/>
 			</Grid>
 		</section>
 	</main>
