@@ -36,7 +36,8 @@ useHead({
 				<CategoryButton
 					title="Konkursy"
 					description="Spróbuj swoich sił!"
-					path="/szkola/konkursy"
+					path="https://cdn.sanity.io/files/vm3xce09/production/d969d2aad847829068119cbbc1724f2bd05f3724.pdf"
+					targetBlank
 				/>
 				<CategoryButton
 					title="Komitet rodzicielski"
@@ -67,6 +68,25 @@ useHead({
 				</div>
 			</div>
 		</section>
+		<section>
+			<h1>Nasze kierunki</h1>
+			<h3>Liceum</h3>
+			<Grid>
+				<CategoryButton title="Akademicka Szkoła politechniczna" path="/" description="Wydaje mi się że nudne, ale możesz przyjść"/>
+				<CategoryButton title="Bezpieczeństwo Publiczne" path="/" description="Jak lubisz mundury :D"/>
+				<CategoryButton title="Pedagogiczna" path="/" description="Interesujesz się psychologią bądź pedagogiką?"/>
+				<CategoryButton title="Rehabilitacyjno-Medyczna" path="/" description="Wyleczymy cię z twoich problemów :P"/>
+				<CategoryButton title="Geograficzno-Językowa" path="/" description="Niemiecki, Hiszpański, Angielski? Wybieraj"/>
+			</Grid>
+			<h3>Technikum</h3>
+			<Grid>
+				<CategoryButton title="Techink Technologi Chemicznej" path="/" description="Zawsze wlewaj kwas do wody!"/>
+				<CategoryButton title="Techink Ekonomista" path="/" description="Kiedy lubisz liczyć pieniążki"/>
+				<CategoryButton title="Techink Hotelarstwa" path="/" description="Szczerze, nie wiem co tu napisać"/>
+				<CategoryButton title="Techink Programista" path="/" description="Dla miłośników parzenia kawy"/>
+				<CategoryButton title="Techink Informatyk" path="/" description="Klasowy informatyk? Tu jest twoje miejsce"/>
+			</Grid>
+		</section>
 	</main>
 </template>
 
@@ -92,7 +112,7 @@ section {
 
 	.btn {
 		padding: 0.6em;
-		margin: 1em;
+		margin: 0.5em;
 	}
 }
 </style>
