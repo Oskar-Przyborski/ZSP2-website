@@ -73,10 +73,10 @@ useHead({
 			<h3>Liceum</h3>
 			<Grid>
 				<CategoryButton title="Akademicka Szkoła politechniczna" path="/" description="Wydaje mi się że nudne, ale możesz przyjść"/>
-				<CategoryButton title="Bezpieczeństwo Publiczne" path="/" description="Jak lubisz mundury :D"/>
-				<CategoryButton title="Pedagogiczna" path="/" description="Interesujesz się psychologią bądź pedagogiką?"/>
-				<CategoryButton title="Rehabilitacyjno-Medyczna" path="/" description="Wyleczymy cię z twoich problemów :P"/>
-				<CategoryButton title="Geograficzno-Językowa" path="/" description="Niemiecki, Hiszpański, Angielski? Wybieraj"/>
+				<CategoryButton title="Klasa Bezpieczeństwa Publicznego" path="/" description="Jak lubisz mundury :D"/>
+				<CategoryButton title="Klasa Pedagogiczna" path="/" description="Interesujesz się psychologią bądź pedagogiką?"/>
+				<CategoryButton title="Klasa Rehabilitacyjno-Medyczna" path="/" description="Wyleczymy cię z twoich problemów :P"/>
+				<CategoryButton title="Klasa Geograficzno-Językowa" path="/" description="Niemiecki, Hiszpański, Angielski? Wybieraj"/>
 			</Grid>
 			<h3>Technikum</h3>
 			<Grid>
