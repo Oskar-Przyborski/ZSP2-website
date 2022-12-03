@@ -2,6 +2,7 @@ import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
 	modules: ["@nuxtjs/sanity", "nuxt-icon", "@nuxt/image-edge"],
+	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
 	css: ["~/assets/global.css"],
 	sanity: {
 		projectId: "vm3xce09",
@@ -32,12 +33,12 @@ export default defineNuxtConfig({
 				},
 				{
 					rel: "preconnect",
-					href: "https://fonts.gstatic.com"
+					href: "https://fonts.gstatic.com",
 				},
 				{
 					rel: "preconnect",
-					href: "https://fonts.googleapis.com"
-				}
+					href: "https://fonts.googleapis.com",
+				},
 			],
 		},
 	},
