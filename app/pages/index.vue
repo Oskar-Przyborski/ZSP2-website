@@ -75,7 +75,7 @@ useHead({
 				<Major
 					tag="LICEUM"
 					title="Akademicka Szkoła Politechniczna"
-					description="Wydaje mi się że nudne, ale możesz przyjść"
+					description="Wydaje mi się, że nudne, ale możesz przyjść"
 					extenstions="Matematyka i fizyka albo chemia"
 				/>
 				<Major
@@ -95,7 +95,7 @@ useHead({
 					tag="LICEUM"
 					title="Klasa Rehabilitacyjno-Medyczna"
 					path="/"
-					description="Wyleczymy cię z twoich problemów :P"
+					description="Wyleczymy Cię z Twoich problemów :P"
 					extenstions="Biologia i chemia"
 				/>
 				<Major
