@@ -1,5 +1,3 @@
-import NavigationCategory from "./Objects/NavigationCategory";
-
 export default {
   type: "document",
   name: "navigation",

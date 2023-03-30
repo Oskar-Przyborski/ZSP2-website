@@ -1,10 +1,10 @@
-import S from "@sanity/desk-tool/structure-builder";
 import {
   MdOutlineArticle,
   MdOutlineWeb,
   MdOutlineNavigation,
 } from "react-icons/md";
-export default () =>
+
+export default (S) =>
   S.list()
     .title("Treści")
     .items([

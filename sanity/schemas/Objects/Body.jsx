@@ -21,10 +21,8 @@ export default {
           {
             title: "Wyśrodkuj",
             value: "centered",
-            blockEditor: {
-              icon: BiHorizontalCenter,
-              render: props=> <div style={{ textAlign: 'center' }}>{props.children}</div>
-            },
+            icon: BiHorizontalCenter,
+            component: props=> <div style={{ textAlign: 'center' }}>{props.children}</div>
           },
         ],
       },
