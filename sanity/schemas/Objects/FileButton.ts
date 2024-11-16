@@ -1,5 +1,7 @@
 import { MdFileDownload } from "react-icons/md";
-export default {
+import { defineArrayMember } from "sanity";
+
+export const FileButton = defineArrayMember({
   type: "object",
   name: "file-button",
   title: "Odnośnik pliku",
@@ -18,9 +20,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-        title: "Plik",
-        name: "file",
-        type: "file"
+      title: "Plik",
+      name: "file",
+      type: "file"
     },
     {
       name: "targetBlank",
@@ -30,4 +32,4 @@ export default {
       initialValue: () => true,
     },
   ],
-};
+});

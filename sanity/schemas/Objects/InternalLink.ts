@@ -1,6 +1,7 @@
 import { BiLink } from "react-icons/bi";
+import { defineArrayMember } from "sanity";
 
-export default {
+export const InternalLink = defineArrayMember({
   title: "Link wewnętrzny",
   name: "internal-link",
   type: "object",
@@ -14,4 +15,4 @@ export default {
       validation: (Rule) => Rule.required(),
     },
   ],
-};
+});

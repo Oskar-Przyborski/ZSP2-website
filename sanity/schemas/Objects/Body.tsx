@@ -1,9 +1,14 @@
 import { BiHorizontalCenter } from "react-icons/bi";
-import React from "react";
-import internalLink from "./internalLink";
-import link from "./link";
+import { defineType } from "sanity";
+import { InternalLink } from "./InternalLink";
+import { Link } from "./Link";
+import { YoutubeEmbed } from "./YoutubeEmbed";
+import { PageButton } from "./PageButton";
+import { FileButton } from "./FileButton";
+import { Grid } from "./Grid";
+import { TiktokEmbed } from "./TiktokEmbed";
 
-export default {
+export const Body = defineType({
   title: "Body",
   name: "body",
   type: "array",
@@ -11,7 +16,7 @@ export default {
     {
       type: "block",
       marks: {
-        annotations: [internalLink, link],
+        annotations: [Link, InternalLink],
         decorators: [
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
@@ -22,16 +27,18 @@ export default {
             title: "Wyśrodkuj",
             value: "centered",
             icon: BiHorizontalCenter,
-            component: props=> <div style={{ textAlign: 'center' }}>{props.children}</div>
+            component: (props) => (
+              <div style={{ textAlign: "center" }}>{props.children}</div>
+            ),
           },
         ],
       },
     },
     { type: "image" },
-    { type: "page-button" },
-    { type: "file-button" },
-    { type: "grid" },
-    { type: "tiktok-embed" },
-    { type: "youtube-embed" },
+    PageButton,
+    FileButton,
+    Grid,
+    TiktokEmbed,
+    YoutubeEmbed,
   ],
-};
+});
